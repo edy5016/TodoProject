@@ -8,7 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { JqueryComponent } from './jquery/jquery.component';
 import { AngularComponent } from './angular/angular.component';
 import {RouterModule, Routes} from '@angular/router';
-import * as path from 'path';
+
+import {MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 // 라우팅 테이블
 const routes : Routes = [
@@ -31,7 +34,14 @@ const routes : Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
