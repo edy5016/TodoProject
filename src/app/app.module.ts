@@ -12,6 +12,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {HttpClientModule} from '@angular/common/http';
+import {UserService} from './user.service';
+import {FormsModule} from '@angular/forms';
 
 // 라우팅 테이블
 const routes : Routes = [
@@ -30,20 +33,24 @@ const routes : Routes = [
     IndexComponent,
     HomeComponent,
     JqueryComponent,
-    AngularComponent
+    AngularComponent,
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
+
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
